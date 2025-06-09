@@ -12,7 +12,7 @@ heroi.MostrarStatus();
 Console.WriteLine(new string('=', 97));
 
 Console.WriteLine("Aperte qualquer tecla para começar...");
-Console.ReadKey();
+Console.ReadKey(true);
 
 Criatura[] criaturas =
 [
@@ -48,6 +48,7 @@ if (heroi.Energia > 0)
     Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine("\n🎉 Você completou a masmorra! Parabéns!!! 🎉");
     Console.ResetColor();
+    Console.ReadKey(true);
 }
 
 static void Combater(Heroi heroi, Criatura criatura)
@@ -141,6 +142,7 @@ static void FimDeJogo()
     Console.WriteLine("\n ☠️  Sua energia acabou... FIM DE JOGO!!! ☠️\n");
     Console.ResetColor();
     Console.WriteLine(new string('=', 97));
+    Console.ReadKey(true);
 }
 
 static bool Confirmar(string pergunta)
