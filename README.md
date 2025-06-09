@@ -94,5 +94,3 @@ Masmorra.exe
 Acesse o programa através do seguinte [link](download/Masmorra.zip)
 
 ---
-
-Se você quiser, posso te ajudar a criar o `README.md` diretamente no formato Markdown pronto para colar no seu projeto. Deseja isso?
