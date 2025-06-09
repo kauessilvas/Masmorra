@@ -1,5 +1,7 @@
 # 🧙‍♂️ Masmorra
 
+Feito por Kauê Santos da Silva & Yasmim de Castro Ribeiro
+
 ## 🗡️ Sobre
 
 **Masmorra** é um programa que simula o sistema de combate dos livros-jogos da série *Fighting Fantasy* (lançados no Brasil pela Jambô Editora). O jogador percorre uma masmorra enfrentando uma série de criaturas em batalhas baseadas em dados, habilidade e sorte.
