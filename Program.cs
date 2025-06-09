@@ -38,7 +38,7 @@ for (int i = 0; i < criaturas.Length; i++)
         break;
     }
     Console.WriteLine(new string('=', 97));
-    Console.WriteLine($"\n ⚔️  {i + 1}-Rodada ⚔️");
+    Console.WriteLine($"\n *** {i + 1}-Rodada ***");
     Combater(heroi, criaturas[i]);
     Thread.Sleep(1000);
 }
@@ -46,7 +46,7 @@ for (int i = 0; i < criaturas.Length; i++)
 if (heroi.Energia > 0)
 {
     Console.ForegroundColor = ConsoleColor.Green;
-    Console.WriteLine("\n🎉 Você completou a masmorra! Parabéns!!! 🎉");
+    Console.WriteLine("\n*** Você completou a masmorra! Parabéns!!! ***");
     Console.ResetColor();
     Console.ReadKey(true);
 }
@@ -58,13 +58,13 @@ static void Combater(Heroi heroi, Criatura criatura)
         int ataqueHeroi = heroi.Habilidade + RolarDado(2, 6);
         int ataqueInimigo = criatura.Habilidade + RolarDado(2, 6);
 
-        Console.WriteLine($"\n👑 Herói ataca com força: {ataqueHeroi} pontos");
-        Console.WriteLine($"🤖 {criatura.Nome} ataca com força: {ataqueInimigo} pontos");
+        Console.WriteLine($"\nHerói ataca com força: {ataqueHeroi} pontos");
+        Console.WriteLine($"{criatura.Nome} ataca com força: {ataqueInimigo} pontos");
 
-        Console.WriteLine($"Heroi: {heroi.Energia} ❤️  | Inimigo: {criatura.Energia} 💙");
+        Console.WriteLine($"Heroi: {heroi.Energia} HP  | Inimigo: {criatura.Energia} HP");
         if (ataqueHeroi > ataqueInimigo)
         {
-            if (Confirmar("✅ Você acertou o inimigo! Deseja testar sua sorte para aumentar o dano causado?"))
+            if (Confirmar("Você acertou o inimigo! Deseja testar sua sorte para aumentar o dano causado?"))
             {
                 int testeSorte = RolarDado(2, 6);
                 Console.WriteLine($"Teste de sorte: {testeSorte} (Sorte atual: {heroi.Sorte})\n");
@@ -72,14 +72,14 @@ static void Combater(Heroi heroi, Criatura criatura)
                 if (testeSorte <= heroi.Sorte)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Você foi sortudo! Causou 4 de dano. 🗡️");
+                    Console.WriteLine("Você foi sortudo! Causou 4 de dano.");
                     Console.ResetColor();
                     criatura.Energia -= 4;
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Você foi azarado! Causou apenas 1 de dano. 🗡️");
+                    Console.WriteLine("Você foi azarado! Causou apenas 1 de dano.");
                     Console.ResetColor();
                     criatura.Energia -= 1;
                 }
@@ -92,7 +92,7 @@ static void Combater(Heroi heroi, Criatura criatura)
         }
         else if (ataqueInimigo > ataqueHeroi)
         {
-            if (Confirmar("❌ Você não acertou o inimigo! Deseja testar sua sorte para reduzir o dano sofrido?"))
+            if (Confirmar("Você não acertou o inimigo! Deseja testar sua sorte para reduzir o dano sofrido?"))
             {
                 int testeSorte = RolarDado(2, 6);
                 Console.WriteLine($"\nTeste de sorte: {testeSorte} (Sorte atual: {heroi.Sorte})\n");
@@ -100,14 +100,14 @@ static void Combater(Heroi heroi, Criatura criatura)
                 if (testeSorte <= heroi.Sorte)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Você foi sortudo! Sofreu apenas 1 de dano. 🛡️");
+                    Console.WriteLine("Você foi sortudo! Sofreu apenas 1 de dano.");
                     Console.ResetColor();
                     heroi.Energia -= 1;
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Você foi azarado! Sofreu 3 de dano. 🛡️🗡️");
+                    Console.WriteLine("Você foi azarado! Sofreu 3 de dano.");
                     Console.ResetColor();
                     heroi.Energia -= 3;
                 }
@@ -129,7 +129,7 @@ static void Combater(Heroi heroi, Criatura criatura)
     {
         Console.WriteLine(new string('-', 97));
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine($"✅ Você derrotou {criatura.Nome}!");
+        Console.WriteLine($"Você derrotou {criatura.Nome}!");
         Console.ResetColor();
         Console.WriteLine(new string('-', 97));
     }
@@ -139,7 +139,7 @@ static void FimDeJogo()
 {
     Console.WriteLine(new string('=', 97));
     Console.ForegroundColor = ConsoleColor.Red;
-    Console.WriteLine("\n ☠️  Sua energia acabou... FIM DE JOGO!!! ☠️\n");
+    Console.WriteLine("\nSua energia acabou... FIM DE JOGO!!!\n");
     Console.ResetColor();
     Console.WriteLine(new string('=', 97));
     Console.ReadKey(true);
@@ -178,7 +178,7 @@ class Heroi(int habilidade, int energia, int sorte)
 
     public void MostrarStatus()
     {
-        Console.WriteLine($"Habilidade: {Habilidade} 🗡️  | Energia: {Energia} ❤️");
+        Console.WriteLine($"Habilidade: {Habilidade}  | Energia: {Energia}");
         return;
     }
 }
